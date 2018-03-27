@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<kerbal-cadets>
+  <kerbal-cadet name="Jebediah Kerman" bio="Kerbonaut, badass, and manufacturer"></kerbal-cadet>
+  <kerbal-cadet name="Bill Kerman" bio="The second kerbonaut"></kerbal-cadet>
+  <kerbal-cadet name="Bob Kerman" bio="The third kerbonaut"></kerbal-cadet>
+  <kerbal-cadet name="Valentina Kerman" bio="The first female kerbonaut"></kerbal-cadet>
+  <kerbal-cadet name="Wernher von Kerman" bio="Famous rocket scientist"></kerbal-cadet>
+  <kernal-cadet name="Gene Kerman" bio="Flight instructor and mission controller"></kernal-cadet>
+  <!-- Source Data
+    Kerbonauts: The only Kerbals playable in-game.
+    Jebediah Kerman: Kerbonaut, badass, and manufacturer.
+    Bill Kerman: The second kerbonaut.
+    Bob Kerman: The third kerbonaut.
+    Valentina Kerman: The first female kerbonaut.
+    Wernher von Kerman: Famous rocket scientist.
+    Gene Kerman: Flight instructor and mission controller. -->
+</kerbal-cadets>
