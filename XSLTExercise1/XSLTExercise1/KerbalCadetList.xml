@@ -1,9 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<kerbal-cadets xmlns="urn:ksp">
-  <kerbal-cadet name="Jebediah Kerman" bio="Kerbonaut, badass, and manufacturer"></kerbal-cadet>
-  <kerbal-cadet name="Bill Kerman" bio="The second kerbonaut"></kerbal-cadet>
-  <kerbal-cadet name="Bob Kerman" bio="The third kerbonaut"></kerbal-cadet>
-  <kerbal-cadet name="Valentina Kerman" bio="The first female kerbonaut"></kerbal-cadet>
-  <kerbal-cadet name="Wernher von Kerman" bio="Famous rocket scientist"></kerbal-cadet>
-  <kernal-cadet name="Gene Kerman" bio="Flight instructor and mission controller"></kernal-cadet>
+<kerbal-cadets>
+  <kerbal-cadet name="Jebediah Kerman" cadet-id="1" bio="Kerbonaut, badass, and manufacturer">
+    <history>
+      <rocket-launches>6</rocket-launches>
+    </history>
+  </kerbal-cadet>
+  <kerbal-cadet name="Bill Kerman" cadet-id="2" bio="The second kerbonaut">
+    <history>
+      <rocket-launches>5</rocket-launches>
+    </history>
+  </kerbal-cadet>
+  <kerbal-cadet name="Bob Kerman" cadet-id="3" bio="The third kerbonaut"></kerbal-cadet>
+  <kerbal-cadet name="Valentina Kerman" cadet-id="4" bio="The first female kerbonaut"></kerbal-cadet>
+  <kerbal-cadet name="Wernher von Kerman" cadet-id="5" bio="Famous rocket scientist"></kerbal-cadet>
+  <kerbal-cadet name="Gene Kerman" cadet-id="6" bio="Flight instructor and mission controller">
+    <history>
+      <rocket-launches>9</rocket-launches>
+    </history>
+  </kerbal-cadet>
 </kerbal-cadets>

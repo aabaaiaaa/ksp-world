@@ -29,8 +29,14 @@ namespace XSLTExercise1
 
 
             TransformXmlFile(relativeFileLocation, xsltFileLocation, transformedXmlOutputFileLocation);
+            UseLinqToQueryTransformedXml(transformedXmlOutputFileLocation);
 
+            Console.WriteLine("press any key to continue to next XSLT...");
+            Console.ReadKey();
+            Console.Clear();
 
+            xsltFileLocation = "ListHistory.xslt";
+            TransformXmlFile(relativeFileLocation, xsltFileLocation, transformedXmlOutputFileLocation);
             UseLinqToQueryTransformedXml(transformedXmlOutputFileLocation);
 
 
@@ -56,22 +62,16 @@ namespace XSLTExercise1
 
             // Select using LINQ
             XElement readTransformedXml = XElement.Parse(transformedXmlFromFile.OuterXml);
-            var query = from ele in readTransformedXml.Elements("{urn:ksp}kerbal-cadet")
-                        select ele;
+            var query = from ele in readTransformedXml.Elements("kerbal-cadet") select ele;
+            OutputLinqQuerySelect(query, "all cadets");
 
-            OutputLinqQuerySelect(query);
-
-            query = from ele in readTransformedXml.Elements("{urn:ksp}kerbal-cadet")
-                    select ele;
-
-            OutputLinqQuerySelect(query);
-
-            //TODO: Where clauses to filter XML data by additional attributes and parent node attributes
+            query = from something in readTransformedXml.Elements("kerbal-cadet") where int.Parse(something.Attribute("cadet-id").Value) > 4 select something;
+            OutputLinqQuerySelect(query, "cadet-id > 4");
         }
 
-        private static void OutputLinqQuerySelect(IEnumerable<XElement> query)
+        private static void OutputLinqQuerySelect(IEnumerable<XElement> query, string outputDescription = "")
         {
-            Console.WriteLine("--query output--");
+            Console.WriteLine(string.Format("--query output ({0})--", outputDescription));
             foreach (var ele in query)
                 Console.WriteLine(ele);
         }
