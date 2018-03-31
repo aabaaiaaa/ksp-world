@@ -1,0 +1,19 @@
+﻿<Window x:Class="Kerbal.ClientWpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kerbal.ClientWpfApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="173.457" Width="393.837">
+    <Grid>
+        <Button Content="Add Kerbal" HorizontalAlignment="Left" Margin="55,94,0,0" VerticalAlignment="Top" Width="75" Click="AddKerbals_Click"/>
+        <TextBox Name="kerbalNameTxt" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="Kerbal name..." VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="missionRefTxt" HorizontalAlignment="Left" Height="23" Margin="10,38,0,0" TextWrapping="Wrap" Text="Mission ref..." VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="targetPlanetTxt" HorizontalAlignment="Left" Height="23" Margin="10,66,0,0" TextWrapping="Wrap" Text="Target planet..." VerticalAlignment="Top" Width="120"/>
+        <Button Content="List Kerbals" HorizontalAlignment="Left" Margin="301,112,0,0" VerticalAlignment="Top" Width="75" Click="ListKerbals_Click"/>
+        <ListBox Name="kerbalListBox" HorizontalAlignment="Left" Height="79" Margin="135,28,0,0" VerticalAlignment="Top" Width="241"/>
+        <Label Name="kerbalListLabel" Content="Number of Kerbals: 0" HorizontalAlignment="Left" Margin="135,2,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
