@@ -32,11 +32,11 @@ namespace Kerbal.ClientWpfApp
         private void ListKerbals_Click(object sender, RoutedEventArgs e)
         {
             var kerbalProxy = new KerbalProxy();
-            var kerbalsOnMission = kerbalProxy.GetKerbalInfo(true);
+            var kerbalsNotOnMission = kerbalProxy.GetKerbalInfo(false);
 
-            kerbalListBox.ItemsSource = kerbalsOnMission;
+            kerbalListBox.ItemsSource = kerbalsNotOnMission.Select(k => string.Format("{0}, {1}", k.Name, k.LastMission));
             kerbalListLabel.ContentStringFormat = "Number of Kerbals: {0}";
-            kerbalListLabel.Content = kerbalsOnMission.Count();
+            kerbalListLabel.Content = kerbalsNotOnMission.Count();
             kerbalProxy.Close();
         }
 
@@ -47,6 +47,19 @@ namespace Kerbal.ClientWpfApp
             var kerbalName = kerbalNameTxt.Text;
             var missionRef = missionRefTxt.Text;
             var targetPlanet = targetPlanetTxt.Text;
+
+            kerbalProxy.AddKerbalInfo(kerbalName, missionRef, targetPlanet);
+
+            kerbalProxy.Close();
+        }
+
+        private void RemoveKerbal_Click(object sender, RoutedEventArgs e)
+        {
+            var kerbalProxy = new KerbalProxy();
+
+            var kerbalName = removeKerbalNameTxt.Text;
+
+            kerbalProxy.RemoveKerbalInfo(kerbalName);
 
             kerbalProxy.Close();
         }

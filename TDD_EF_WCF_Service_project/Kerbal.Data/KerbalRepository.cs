@@ -30,7 +30,7 @@ namespace Kerbal.Data
 
         public IEnumerable<Kerbal> Get(bool onMission)
         {
-            return from k in _context.Kerbals where k.OnMission select k;
+            return from k in _context.Kerbals where k.OnMission == onMission select k;
         }
 
         public IEnumerable<Kerbal> Get()

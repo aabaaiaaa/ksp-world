@@ -38,11 +38,17 @@ namespace Kerbal.Test
                         Ref = "real-flight-101",
                         TargetPlanet = "Duna"
                     }
+                },
+                new Data.Kerbal()
+                {
+                    KerbalId = 1009,
+                    Name = "Valentina"
                 }
             }.AsEnumerable();
             _mockKerbalRepository = new Mock<IKerbalRepository>();
             _mockKerbalRepository.Setup(m => m.Get()).Returns(_kerbalData);
             _mockKerbalRepository.Setup(m => m.Get(true)).Returns(_kerbalData.Where(k => k.OnMission));
+            _mockKerbalRepository.Setup(m => m.Get(false)).Returns(_kerbalData.Where(k => !k.OnMission));
             _kerbalManager = new KerbalManager(_mockKerbalRepository.Object);
         }
         private Mock<IKerbalRepository> _mockKerbalRepository;
@@ -68,12 +74,55 @@ namespace Kerbal.Test
         }
 
         [TestMethod]
+        public void get_kerbal_info_by_kerbals_NOT_on_missions()
+        {
+            var kerbalsOnMissions = _kerbalManager.GetKerbalInfo(false);
+
+            Assert.AreEqual(2, kerbalsOnMissions.Count());
+            Assert.AreEqual("Jebadiah", kerbalsOnMissions.First().Name);
+        }
+
+        [TestMethod]
         public void get_kerbal_info_by_kerbals_on_missions()
         {
             var kerbalsOnMissions = _kerbalManager.GetKerbalInfo(true);
 
             Assert.AreEqual(1, kerbalsOnMissions.Count());
             Assert.AreEqual("Bill", kerbalsOnMissions.First().Name);
+        }
+
+        [TestMethod]
+        public void add_kerbal_info()
+        {
+            // Setup
+            var data = new Data.Kerbal()
+            {
+                KerbalId = 1007,
+                Name = "Bill",
+                LastCompletedMission = new Mission()
+                {
+                    Ref = "mun-flight-10",
+                    TargetPlanet = "Mun"
+                }
+            };
+            _mockKerbalRepository.Setup(m => m.Add(It.IsAny<Data.Kerbal>())).Returns(data);
+
+            // Actual test
+            var addedKerbal = _kerbalManager.AddKerbalInfo("Bill", "mun-flight-10", "Mun");
+
+            _mockKerbalRepository.Verify(m => m.Add(It.IsAny<Data.Kerbal>()), Times.Once());
+            Assert.AreEqual("Bill", addedKerbal.Name);
+            Assert.AreEqual("Mission Ref: mun-flight-10, Target: Mun", addedKerbal.LastMission);
+        }
+
+        [TestMethod]
+        public void remove_kerbal_info()
+        {
+            _mockKerbalRepository.Setup(m => m.Get("Gene")).Returns(new Data.Kerbal() { KerbalId = 101, Name = "Gene" });
+
+            _kerbalManager.RemoveKerbalInfo("Gene");
+
+            _mockKerbalRepository.Verify(m => m.Remove(It.Is<Data.Kerbal>(k => k.KerbalId == 101)), Times.Once());
         }
     }
 }

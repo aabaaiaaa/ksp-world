@@ -15,5 +15,11 @@ namespace Kerbal.Contracts
 
         [OperationContract(Name = "GetKerbalInfoById")]
         KerbalData GetKerbalInfo(int kerbalId);
+
+        [OperationContract]
+        KerbalData AddKerbalInfo(string name, string missionRef, string targetPlanet);
+
+        [OperationContract]
+        void RemoveKerbalInfo(string name);
     }
 }
