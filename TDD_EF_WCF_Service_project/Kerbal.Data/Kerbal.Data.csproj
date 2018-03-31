@@ -63,9 +63,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IKerbalRepository.cs" />
+    <Compile Include="IKerbalMissionRepository.cs" />
     <Compile Include="Kerbal.cs" />
     <Compile Include="KerbalDbContext.cs" />
     <Compile Include="KerbalRepository.cs" />
+    <Compile Include="Mission.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

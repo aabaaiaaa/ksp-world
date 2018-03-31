@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kerbal.Data
 {
-    public class KerbalRepository : IKerbalRepository
+    public class KerbalRepository : IKerbalRepository, IKerbalMissionRepository
     {
         // Dependency Injection
         public KerbalRepository(KerbalDbContext dbContext)
@@ -36,6 +36,21 @@ namespace Kerbal.Data
         public IEnumerable<Kerbal> Get()
         {
             return (from k in _context.Kerbals select k);
+        }
+
+        public Mission GetMission(string missionRef)
+        {
+            return (from km in _context.Kerbals where km.LastCompletedMission.Ref == missionRef select km.LastCompletedMission).FirstOrDefault();
+        }
+
+        public IEnumerable<Mission> GetMissions()
+        {
+            return (from km in _context.Kerbals select km.LastCompletedMission);
+        }
+
+        public IEnumerable<Mission> GetMissions(string targetPlanet)
+        {
+            return (from km in _context.Kerbals where km.LastCompletedMission.TargetPlanet == targetPlanet select km.LastCompletedMission);
         }
 
         public void Remove(Kerbal entity)

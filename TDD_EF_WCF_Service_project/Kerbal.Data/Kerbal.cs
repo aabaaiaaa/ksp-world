@@ -11,5 +11,6 @@ namespace Kerbal.Data
         public int KerbalId { get; set; }
         public string Name { get; set; }
         public bool OnMission { get; set; }
+        public Mission LastCompletedMission { get; set; }
     }
 }

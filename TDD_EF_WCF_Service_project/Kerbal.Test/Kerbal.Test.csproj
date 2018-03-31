@@ -70,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KerbalMissionRepositoryUnitTests.cs" />
     <Compile Include="KerbalRepositoryIntegrationTests.cs" />
     <Compile Include="KerbalRepositoryUnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
