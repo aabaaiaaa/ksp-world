@@ -24,7 +24,7 @@ namespace Kerbal.Test
             _service = new KerbalRepository(_mockContext.Object);
         }
 
-        private void SetupQueryableData(IQueryable<Data.Kerbal> data)
+        private void SetupMockQueryableData(IQueryable<Data.Kerbal> data)
         {
             var mockSetDataSetup = _mockSet.As<IQueryable<Data.Kerbal>>();
             mockSetDataSetup.Setup(m => m.Provider).Returns(data.Provider);
@@ -59,7 +59,7 @@ namespace Kerbal.Test
             }.AsQueryable();
 
             // Connect data to mock
-            SetupQueryableData(data);
+            SetupMockQueryableData(data);
 
             // Actual tests
             var kerbals = _service.Get();
@@ -79,7 +79,7 @@ namespace Kerbal.Test
             }.AsQueryable();
 
             // Connect data to mock
-            SetupQueryableData(data);
+            SetupMockQueryableData(data);
 
             // Actual test
             var kerbalsOnMission = _service.Get(true);
@@ -97,12 +97,43 @@ namespace Kerbal.Test
                 new Data.Kerbal(){ Name = "Valentina" }
             }.AsQueryable();
 
-            SetupQueryableData(data);
+            SetupMockQueryableData(data);
 
             // Actual Test
             var kerbalsOnMission =_service.Get(true);
 
             Assert.AreEqual(0, kerbalsOnMission.Count());
+        }
+
+        [TestMethod]
+        public void get_a_kerbal_by_name()
+        {
+            var data = new List<Data.Kerbal>()
+            {
+                new Data.Kerbal(){ Name = "Bob"},
+                new Data.Kerbal(){ Name = "Wernher"}
+            }.AsQueryable();
+
+            SetupMockQueryableData(data);
+
+            // Actual test
+            var kerbal = _service.Get("Bob");
+
+            Assert.AreEqual("Bob", kerbal.Name);
+        }
+
+        [TestMethod]
+        public void remove_a_kerbal()
+        {
+            // Test setup
+            _mockContext.Setup(m => m.Kerbals).Returns(_mockSet.Object);
+            var kerbalToRemove = new Data.Kerbal() { Name = "Gene" };
+
+            // Actual test
+            _service.Remove(kerbalToRemove);
+
+            _mockSet.Verify(m => m.Remove(It.IsAny<Data.Kerbal>()), Times.Once());
+            _mockContext.Verify(m => m.SaveChanges(), Times.Once());
         }
         #endregion
     }
