@@ -8,6 +8,7 @@ namespace Kerbal.Data
 {
     public class KerbalRepository : IKerbalRepository
     {
+        // Dependency Injection
         public KerbalRepository(KerbalDbContext dbContext)
         {
             _context = dbContext;
