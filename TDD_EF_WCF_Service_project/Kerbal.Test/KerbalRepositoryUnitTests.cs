@@ -135,6 +135,35 @@ namespace Kerbal.Test
             _mockSet.Verify(m => m.Remove(It.IsAny<Data.Kerbal>()), Times.Once());
             _mockContext.Verify(m => m.SaveChanges(), Times.Once());
         }
+
+        [TestMethod]
+        public void update_a_kerbal_on_mission()
+        {
+            // Test setup
+            var data = new List<Data.Kerbal>() {
+                new Data.Kerbal(){ Name = "Bob" }
+            }.AsQueryable();
+            SetupMockQueryableData(data);
+            var kerbalToUpdate = new Data.Kerbal() { Name = "Bob", OnMission = true };
+
+            // Actual test
+            _service.Update(kerbalToUpdate);
+
+            Assert.AreEqual(true, data.First().OnMission);
+            _mockContext.Verify(m => m.SaveChanges(), Times.Once);
+        }
+
+        [TestMethod, ExpectedException(typeof(ArgumentException))]
+        public void fail_to_update_a_kerbal()
+        {
+            // respond with exception that kerbal to update does not exist
+            var data = new List<Data.Kerbal>() { }.AsQueryable();
+            SetupMockQueryableData(data);
+            var kerbalToFailToUpdate = new Data.Kerbal() { Name = "Bill", OnMission = true };
+
+            //Actual test
+            _service.Update(kerbalToFailToUpdate);
+        }
         #endregion
     }
 }

@@ -47,7 +47,12 @@ namespace Kerbal.Data
         public Kerbal Update(Kerbal entity)
         {
             // Find the entity in the DB
-            var entityToUpdate = from k in _context.Kerbals where k.Name == entity.Name select k;
+            var entityToUpdate = (from k in _context.Kerbals where k.Name == entity.Name select k).FirstOrDefault();
+            // When null throw argument exception
+            if(entityToUpdate == null)
+            {
+                throw new ArgumentException("cannot update a non-existing record");
+            }
             // Update each property available to match the entity being passed in
             foreach (var prop in entity.GetType().GetProperties())
             {
