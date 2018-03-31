@@ -16,6 +16,7 @@ namespace Kerbal.Service
         {
             _kerbalRepository = kerbalRepository;
         }
+        public KerbalManager() { }
 
         private Func<Data.Kerbal, KerbalData> toKerbalData = k => new KerbalData() {
             Name = k.Name,

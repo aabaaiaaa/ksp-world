@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kerbal.Contracts", "Kerbal.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kerbal.Service", "Kerbal.Service\Kerbal.Service.csproj", "{AD754257-F621-4145-ADBA-937A79CBC0D6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hosting", "Hosting", "{95DF10AC-7EFF-4B21-B0DE-A983B538D8FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kerbal.ConsoleApp", "Kerbal.ConsoleApp\Kerbal.ConsoleApp.csproj", "{620F6E2C-BE2B-43F5-B845-F32C4F0734CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,9 +43,16 @@ Global
 		{AD754257-F621-4145-ADBA-937A79CBC0D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD754257-F621-4145-ADBA-937A79CBC0D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD754257-F621-4145-ADBA-937A79CBC0D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{620F6E2C-BE2B-43F5-B845-F32C4F0734CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{620F6E2C-BE2B-43F5-B845-F32C4F0734CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{620F6E2C-BE2B-43F5-B845-F32C4F0734CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{620F6E2C-BE2B-43F5-B845-F32C4F0734CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{620F6E2C-BE2B-43F5-B845-F32C4F0734CA} = {95DF10AC-7EFF-4B21-B0DE-A983B538D8FD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {414CCD8A-6290-4382-8517-49CF26BC7E3E}
