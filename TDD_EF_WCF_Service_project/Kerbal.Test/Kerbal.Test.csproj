@@ -70,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KerbalManagerUnitTests.cs" />
     <Compile Include="KerbalMissionRepositoryUnitTests.cs" />
     <Compile Include="KerbalRepositoryIntegrationTests.cs" />
     <Compile Include="KerbalRepositoryUnitTests.cs" />
@@ -80,9 +81,21 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Kerbal.Contracts\Kerbal.Contracts.csproj">
+      <Project>{97053E4D-E951-42D2-9F65-014DA5D3C138}</Project>
+      <Name>Kerbal.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kerbal.Core\Kerbal.Core.csproj">
+      <Project>{63AF5667-56A1-4CEB-B03E-3DC1764FD7B7}</Project>
+      <Name>Kerbal.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Kerbal.Data\Kerbal.Data.csproj">
       <Project>{59dd9f1a-7012-4c7c-8284-45e55eb4d242}</Project>
       <Name>Kerbal.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kerbal.Service\Kerbal.Service.csproj">
+      <Project>{AD754257-F621-4145-ADBA-937A79CBC0D6}</Project>
+      <Name>Kerbal.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

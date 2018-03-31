@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kerbal.Data", "Kerbal.Data\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kerbal.Test", "Kerbal.Test\Kerbal.Test.csproj", "{690FC4EA-ABEB-4B1C-B897-871A872A5E75}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kerbal.Contracts", "Kerbal.Contracts\Kerbal.Contracts.csproj", "{97053E4D-E951-42D2-9F65-014DA5D3C138}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kerbal.Service", "Kerbal.Service\Kerbal.Service.csproj", "{AD754257-F621-4145-ADBA-937A79CBC0D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{690FC4EA-ABEB-4B1C-B897-871A872A5E75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{690FC4EA-ABEB-4B1C-B897-871A872A5E75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{690FC4EA-ABEB-4B1C-B897-871A872A5E75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97053E4D-E951-42D2-9F65-014DA5D3C138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97053E4D-E951-42D2-9F65-014DA5D3C138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97053E4D-E951-42D2-9F65-014DA5D3C138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97053E4D-E951-42D2-9F65-014DA5D3C138}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD754257-F621-4145-ADBA-937A79CBC0D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD754257-F621-4145-ADBA-937A79CBC0D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD754257-F621-4145-ADBA-937A79CBC0D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD754257-F621-4145-ADBA-937A79CBC0D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
