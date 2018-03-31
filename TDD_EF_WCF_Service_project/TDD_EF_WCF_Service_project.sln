@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kerbal.ConsoleApp", "Kerbal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kerbal.WebApp", "Kerbal.WebApp\Kerbal.WebApp.csproj", "{55275562-0A8D-4AB9-9ACC-F644B6D27484}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kerbal.WpfApp", "Kerbal.WpfApp\Kerbal.WpfApp.csproj", "{F07AD0C6-9215-4F3C-9214-6BA98373787E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{55275562-0A8D-4AB9-9ACC-F644B6D27484}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55275562-0A8D-4AB9-9ACC-F644B6D27484}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55275562-0A8D-4AB9-9ACC-F644B6D27484}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F07AD0C6-9215-4F3C-9214-6BA98373787E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F07AD0C6-9215-4F3C-9214-6BA98373787E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F07AD0C6-9215-4F3C-9214-6BA98373787E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F07AD0C6-9215-4F3C-9214-6BA98373787E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +66,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{620F6E2C-BE2B-43F5-B845-F32C4F0734CA} = {95DF10AC-7EFF-4B21-B0DE-A983B538D8FD}
 		{55275562-0A8D-4AB9-9ACC-F644B6D27484} = {95DF10AC-7EFF-4B21-B0DE-A983B538D8FD}
+		{F07AD0C6-9215-4F3C-9214-6BA98373787E} = {95DF10AC-7EFF-4B21-B0DE-A983B538D8FD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {414CCD8A-6290-4382-8517-49CF26BC7E3E}
