@@ -1,0 +1,12 @@
+﻿@model KerbalFlightRegister.Models.AboutModel
+@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<p>The current administrator is: @Model.Administrator</p>
+<p>Since: @Model.Since.ToUniversalTime() universal now: @DateTime.Now.ToUniversalTime()</p>
+<p>(local: @Model.Since.ToLocalTime() local now: @DateTime.Now.ToLocalTime())</p>
+
+<p>Use this area to provide additional information.</p>
+
+<h2>@ViewBag.RouteUsed</h2>
