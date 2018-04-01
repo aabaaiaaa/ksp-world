@@ -43,5 +43,13 @@ namespace KerbalFlightRegister.Controllers
         {
             return Json(new { Name = "Bill", Location = "Mun", FlightTime = 12354543 }, JsonRequestBehavior.AllowGet);
         }
+
+        [ChildActionOnly]
+        public ActionResult LongestServingKerbin()
+        {
+            var longestServingKerbin = FlightCrewController._flightCrew.OrderByDescending(fc => fc.Age).First();
+            //return Content(string.Format("{0} is the longest serving Kerbin", logestServingKerbin.Name));
+            return PartialView("_longestServing", longestServingKerbin);
+        }
     }
 }
