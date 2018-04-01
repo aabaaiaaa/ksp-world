@@ -38,6 +38,10 @@ namespace Kerbal.ClientWpfApp
             kerbalListLabel.ContentStringFormat = "Number of Kerbals: {0}";
             kerbalListLabel.Content = kerbalsNotOnMission.Count();
             kerbalProxy.Close();
+
+            var messageProxy = new MessageProxy();
+            messageProxy.ShowMessage("GetKerbalInfo called with (false)");
+            messageProxy.Close();
         }
 
         private void AddKerbals_Click(object sender, RoutedEventArgs e)
