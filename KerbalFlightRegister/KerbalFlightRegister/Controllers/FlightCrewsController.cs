@@ -32,9 +32,15 @@ namespace KerbalFlightRegister.Controllers
         }
 
         // GET: FlightCrews
-        public ActionResult Index()
+        public ActionResult Index(string searchTerm)
         {
-            return View(db.FlightCrew.ToList());
+            var crewList = db.FlightCrew.Where(fc => searchTerm == null || fc.Name.StartsWith(searchTerm)).ToList();
+
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_listCrewPartialView", crewList);
+            }
+            return View(crewList);
         }
 
         // GET: FlightCrews/Details/5

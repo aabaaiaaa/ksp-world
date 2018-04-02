@@ -13,11 +13,6 @@ namespace KerbalFlightRegister
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            // kerbals/{id}
-            routes.MapRoute("kerbals", 
-                "kerbals/{action}/{kerbalId}", 
-                new { controller = "kerbals", action = "search", kerbalId = UrlParameter.Optional });
-
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
