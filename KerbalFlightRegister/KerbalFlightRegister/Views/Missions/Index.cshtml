@@ -1,0 +1,13 @@
+﻿@model KerbalFlightRegister.Models.FlightCrew
+
+<h2>Mission History for @Model.Name</h2>
+
+<p>@Html.ActionLink("Add Mission", "Create", new { FlightCrewId = Model.FlightCrewId })</p>
+
+@foreach(var item in Model.Missions){
+
+    <div><h2>@item.TargetPlanet</h2><p>@item.Description</p></div>
+
+}
+
+<p>@Html.ActionLink("Back", "Index", "FlightCrews", null, null)</p>

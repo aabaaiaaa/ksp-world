@@ -22,15 +22,6 @@ namespace KerbalFlightRegister.Controllers
                 Since = new DateTime(2017, 10, 1)
             };
 
-            var routeModel = new RouteModel()
-            {
-                Controller = RouteData?.Values["controller"].ToString() ?? "RouteData is null",
-                Action = RouteData?.Values["action"].ToString() ?? "RouteData is null",
-                Id = RouteData?.Values["id"]?.ToString() ?? "none" ?? "RouteData is null"
-            };
-
-            ViewBag.RouteUsed = string.Format("{0}/{1}/{2}", routeModel.Controller, routeModel.Action, routeModel.Id);
-
             return View(model);
         }
 
