@@ -7,21 +7,9 @@ using System.Threading.Tasks;
 
 namespace DigitalClockConsoleApp
 {
-    class Clock
+    class Clock : IClock
     {
-        public int Hour { get; set; }
-        public int Minute { get; set; }
-        public int Second { get; set; }
-
-        public Clock()
-        {
-            var now = DateTime.Now;
-            Hour = now.Hour;
-            Minute = now.Minute;
-            Second = now.Second;
-        }
-
-        public delegate void SecondHandChangedDelegate(Clock clock, TimeEventArgs timeInfo);
+        private int Second { get; set; }
 
         public event SecondHandChangedDelegate SecondHandChangedHandler;
 

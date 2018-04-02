@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DigitalClockConsoleApp
 {
-    class DigitalClock : IClockSubscriber
+    class Log : IClockSubscriber
     {
         private void Clock_SecondHandChangedHandler(IClock clock, TimeEventArgs timeInfo)
         {
-            Console.WriteLine(string.Format("Time is: {0} hours, {1} minutes, {2} seconds", timeInfo.Hour, timeInfo.Minute, timeInfo.Second));
+            Console.WriteLine($"Log: {timeInfo.Hour}:{timeInfo.Minute}:{timeInfo.Second}");
         }
 
         public void Subscribe(IClock clock)

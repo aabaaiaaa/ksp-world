@@ -10,8 +10,16 @@ namespace DigitalClockConsoleApp
     {
         static void Main(string[] args)
         {
-            var digitalClock = new DigitalClock();
-            digitalClock.StartDigitalClock();
+            IClock sharedClock = new Clock();
+            sharedClock.StartClock();
+
+            IClockSubscriber digitalClock = new DigitalClock();
+            IClockSubscriber logClock = new Log();
+
+            foreach(IClockSubscriber clockSub in new IClockSubscriber[2] { digitalClock, logClock })
+            {
+                clockSub.Subscribe(sharedClock);
+            }
 
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
