@@ -21,6 +21,13 @@ namespace DigitalClockConsoleApp
                 clockSub.Subscribe(sharedClock);
             }
 
+            AsyncWork asyncWork = new AsyncWork();
+            asyncWork.DoSlowWork();
+
+            Console.WriteLine(Environment.NewLine + "main thread start" + Environment.NewLine);
+            for (var i = 0; i < 100; i++) Console.Write("X");
+            Console.WriteLine(Environment.NewLine + "main thread END" + Environment.NewLine);
+
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }
