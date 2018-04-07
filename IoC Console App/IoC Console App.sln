@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoC Console App", "IoC Console App\IoC Console App.csproj", "{75033873-898D-4561-8318-547EB7624914}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoC.Tests", "IoC.Tests\IoC.Tests.csproj", "{01F8F7E7-DDBA-43BB-A687-6EE1E5F78DB5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75033873-898D-4561-8318-547EB7624914}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75033873-898D-4561-8318-547EB7624914}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75033873-898D-4561-8318-547EB7624914}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75033873-898D-4561-8318-547EB7624914}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01F8F7E7-DDBA-43BB-A687-6EE1E5F78DB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01F8F7E7-DDBA-43BB-A687-6EE1E5F78DB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01F8F7E7-DDBA-43BB-A687-6EE1E5F78DB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01F8F7E7-DDBA-43BB-A687-6EE1E5F78DB5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E1A07ED-9E2D-4E3E-BF04-7405E0E2EEEF}
+	EndGlobalSection
+EndGlobal
