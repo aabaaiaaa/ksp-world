@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseCar.cs" />
+    <Compile Include="CarExtensions.cs" />
     <Compile Include="FastCar.cs" />
     <Compile Include="ICar.cs" />
     <Compile Include="Program.cs" />
