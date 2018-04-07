@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace FundamentalsConsoleApp
 {
-    public delegate void CarEventHander<T>(ICar<T> car, bool engineStarted) where T : class, new();
+    public delegate void CarEventHander<T>(ICar<T> car, bool engineStarted) where T : struct;
 
-    public interface ICar<PassengerType> where PassengerType : class, new()
+    public interface ICar<PassengerType> where PassengerType : struct
     {
         void StartEngine();
         void Accelearate(int amount);

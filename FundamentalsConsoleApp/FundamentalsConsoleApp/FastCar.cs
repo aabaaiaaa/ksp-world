@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace FundamentalsConsoleApp
 {
-    public class FastCarPerson
+    public struct FastCarPerson
     {
         public string Name { get; set; }
     }
 
-    public class FastCar<T> : BaseCar<T> where T : class, new()
+    public class FastCar<T> : BaseCar<T> where T : struct
     {
         public FastCar(int numberOfGears = 6) : base(numberOfGears)
         {

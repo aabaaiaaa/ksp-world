@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace FundamentalsConsoleApp
 {
-    public abstract class BaseCar<T> : ICar<T> where T : class, new()
+    public abstract class BaseCar<T> : ICar<T> where T : struct
     {
         public BaseCar(int numberOfGears)
         {
             _numberOfGears = numberOfGears;
         }
 
-        private T[] _passengersOnBoard = new T[] { };
+        private T[] _passengersOnBoard = new T[5];
 
         public T this[int passengerNameIndex] { get => _passengersOnBoard[passengerNameIndex]; set => _passengersOnBoard[passengerNameIndex] = value; }
 

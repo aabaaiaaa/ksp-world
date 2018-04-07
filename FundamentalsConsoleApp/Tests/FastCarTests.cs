@@ -23,6 +23,15 @@ namespace Tests
             Assert.AreEqual(true, onEngineStartEventHandlerFired);
         }
 
+        [TestMethod]
+        public void AddAPassenger()
+        {
+            var car = new FastCar<FastCarPerson>();
+            car[0] = new FastCarPerson() { Name = "Bill" };
+
+            Assert.AreEqual("Bill", car[0].Name);
+        }
+
         private bool onEngineStartEventHandlerFired;
 
         private void Car_OnEngineStart(ICar<FastCarPerson> car, bool engineStarted)
