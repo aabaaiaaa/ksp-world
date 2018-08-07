@@ -1,4 +1,6 @@
-﻿# Kerbal Store
+﻿# NO LONGER MAINTAINED HERE
+
+# Kerbal Store
 
 Example ASP.Net Core, MVC, Bootstrap, Anugular project in the popular context of Kerbal Space Program.
 
