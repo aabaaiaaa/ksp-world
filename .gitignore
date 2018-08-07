@@ -289,3 +289,6 @@ __pycache__/
 
 # Code Coverage reports
 */.axoCover/runs/**/*.xml
+
+KerbalStore/KerbalStore/wwwroot/ClientApp/**/*
+KerbalStore/KerbalStore/wwwroot/lib/**/*
